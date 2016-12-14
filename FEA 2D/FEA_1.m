@@ -1,5 +1,5 @@
-% clc; clear all;
-clc
+%clc; clear all;
+
 x1=3;y1=2;
 x2=5;y2=2;
 x3=5;y3=4;
