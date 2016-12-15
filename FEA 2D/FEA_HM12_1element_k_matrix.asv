@@ -1,0 +1,8 @@
+clc; clear all;
+
+h=0.01;
+v=0.25;
+E=200e9;
+
+pts=[[0 0];[10 2];[5 4];[3 4]];
+k=k_eMatrix(pts,h,v,E)
