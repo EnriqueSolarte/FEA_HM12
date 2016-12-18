@@ -1,0 +1,36 @@
+function k=kn_eMatrix2(mech,L,refined)
+  
+% h=mech(1);
+% v=mech(2);
+% E=mech(3);
+% pitch=L/refined;
+% 
+%  pts=[[0 0];[pitch 0];[pitch pitch];[0 pitch]];
+%  k=k_eMatrix(pts,h,v,E);  
+
+ matrix_names=zeros(refined+1)
+ 
+ for j=1:refined+1
+  for i=1:refined+1   
+        matrix_names(j,i)=(refined+1)*(j-1)+i;
+  end
+ end
+ 
+ names=zeros(refined^2,4);
+ 
+for j=1:refined
+  for i=1:refined
+       names=(j,1)=matrix_names(j,i) ;
+       names=(j,2)=matrix_names(j,i+1) ;
+       names=(j,3)=matrix_names(j+1,i+1) ;
+       names=(j,4)=matrix_names(j+1,i) ;
+       
+  end
+ end 
+
+ 
+  
+
+k=k_names
+   
+end

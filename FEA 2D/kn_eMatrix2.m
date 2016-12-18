@@ -1,25 +1,19 @@
 function k=kn_eMatrix2(mech,L,refined)
+  
+% h=mech(1);
+% v=mech(2);
+% E=mech(3);
+% pitch=L/refined;
+% 
+%  pts=[[0 0];[pitch 0];[pitch pitch];[0 pitch]];
+%  k=k_eMatrix(pts,h,v,E);  
 
-
-    
-h=mech(1);
-v=mech(2);
-E=mech(3);
-pitch=L/refined;
-
- pts=[[0 0];[pitch 0];[pitch pitch];[0 pitch]];
- k=k_eMatrix(pts,h,v,E);  
-
- k_names=zeros(refined+1)
  
- for j=1:refined+1
-  for i=1:refined+1   
-        k_names(j,i)=(refined+1)*(j-1)+i;
-  end
- end
+ 
+names=funtion_names(2); 
+
  
   
 
-k=k_names
    
 end
