@@ -1,17 +1,14 @@
-function names=get_names(Allnames,flag)
+function matrix_names=get_names(refined)
 
-count=0;
-address=zeros(1,1);
-for j=1:length(Allnames)
-    for i=1:4
-        if(Allnames(j,i)==flag)
-            address(count+1)=j;
-            count=count+1;
-        end 
-    end
+matrix_names=zeros(refined+1);
+for j=1:refined+1
+  for i=1:refined+1   
+        matrix_names(j,i)=(refined+1)*(j-1)+i;
+  end
 end
-
-names=zeros(count,4);
-names(:,:)=Allnames(address(:),:);
+ 
+if(refined==1)
+     matrix_names=[1 2; 4 3];
+end
 
 end

@@ -1,12 +1,7 @@
 function names=function_names(refined)
 
-matrix_names=zeros(refined+1);
-for j=1:refined+1
-  for i=1:refined+1   
-        matrix_names(j,i)=(refined+1)*(j-1)+i;
-  end
- end
- 
+matrix_names=get_names(refined);
+
  Vector_names=zeros(refined^2,4);
  index=1;
 for j=1:refined
@@ -18,8 +13,6 @@ for j=1:refined
        index=index+1;
   end
 end 
-if(refined==1)
-    Vector_names=[1 2 3 4];
-end
+
 names=Vector_names;
 end

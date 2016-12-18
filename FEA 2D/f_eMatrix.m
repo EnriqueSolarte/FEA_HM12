@@ -1,8 +1,7 @@
-function f=f_eMatrix(cordinates)
+function f=f_eMatrix(L)
 
 s=1;
 h=0.01;
-L=cordinates(3,2)-cordinates(2,2);
 
 w=1;
 x1=-0.5773;
