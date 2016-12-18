@@ -23,4 +23,4 @@ for j=0:refined-1
     x0=0;
     
 end
-k=kn
+k=kn;
