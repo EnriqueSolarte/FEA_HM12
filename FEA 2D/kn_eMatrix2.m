@@ -9,9 +9,6 @@ pts=[[0 0];[pitch 0];[pitch pitch];[0 pitch]];
 ke=k_eMatrix(pts,h,v,E);  
 
 Allnames=function_names(refined);
-
-k=zeros((refined+1)^2);
-
-k=fill_k(k,allnames,ke);
+k=fill_k(refined,Allnames,ke);
   
 end

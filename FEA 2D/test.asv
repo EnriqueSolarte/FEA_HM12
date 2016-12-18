@@ -9,14 +9,25 @@ L=10;
 pitch=L/refined;
 
 pts=[[0 0];[pitch 0];[pitch pitch];[0 pitch]];
-ke=k_eMatrix(pts,h,v,E);  
-ke_aux=zeros(length(ke)+1);
-ke_
+ke=k_eMatrix(pts,h,v,E);
+ke_aux=zeros(9);
+ke_aux(2:9,1:8)=ke;
 Allnames=function_names(refined);
 
 k=zeros((refined+1)^2);
 
 for i=1:length(Allnames)
-    label=Allnames(i,:)
-    
+    names=Allnames(i,:)
+    ke_aux(1,1:2:8)=names;
+    ke_aux(2:2:8,9)=names;
+    for i=1:2:8
+    for j=2:2:9
+        ik=ke_aux(1,i);
+        jk=ke_aux(j,9);
+        k(jk,ik)=ke_aux(j,i)
+        k(jk+1,ik)=ke_aux(j+1,i)
+    end
 end
+end
+
+

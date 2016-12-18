@@ -18,5 +18,8 @@ for j=1:refined
        index=index+1;
   end
 end 
+if(refined==1)
+    Vector_names=[1 2 3 4];
+end
 names=Vector_names;
 end
