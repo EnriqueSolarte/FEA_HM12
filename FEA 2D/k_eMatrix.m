@@ -8,13 +8,13 @@ p4=cordinates(4,1:2);
 pts=[p1;p2;p3;p4];
 
 %%
-
-B1=B_function([-0.5773,-0.5773,1,1],pts,h);
-B2=B_function([-0.5773 0.5773 1 1],pts,h);
-B3=B_function([0.5773 -0.5773 1 1],pts,h);
-B4=B_function([0.5773 0.5773 1 1],pts,h);
+gauss_p=[0.5773, 1];
+B1=B_function([-gauss_p(1),-gauss_p(1)],pts)*J_jacobian_ST(-gauss_p(1),-gauss_p(1),pts)*gauss_p(2)*h*gauss_p(2);
+B2=B_function([-gauss_p(1),gauss_p(1)],pts)*J_jacobian_ST(-gauss_p(1),gauss_p(1),pts)*gauss_p(2)*h*gauss_p(2);
+B3=B_function([gauss_p(1),-gauss_p(1)],pts)*J_jacobian_ST(gauss_p(1),-gauss_p(1),pts)*gauss_p(2)*h*gauss_p(2);
+B4=B_function([gauss_p(1),gauss_p(1)],pts)*J_jacobian_ST(gauss_p(1),gauss_p(1),pts)*gauss_p(2)*h*gauss_p(2);
 
 D=D_matrix(E,v);
 
-k=B1'*D*B1+B2'*D*B2+B3'*D*B3+B4'*D*B4;
+k=(B1'*D*B1+B2'*D*B2+B3'*D*B3+B4'*D*B4);
 end

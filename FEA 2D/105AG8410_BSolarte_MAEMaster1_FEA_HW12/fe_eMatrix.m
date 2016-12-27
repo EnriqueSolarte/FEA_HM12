@@ -1,10 +1,13 @@
 function fe=fe_eMatrix(L)
-
+%% Defining right side
 s=1;
 h=0.01;
+%% Defining Gauss ponit
 
 w=1;
 x=[-0.5773 0.5773];
+%% Getting ELementary Distributed Force
+
 Ft=0;
 for i=1:2 
     t=x(i);

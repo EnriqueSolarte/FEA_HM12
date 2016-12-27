@@ -1,14 +1,14 @@
-clc; clear all
+K=[1 2 3 4;21 22 23 24;31 32 33 34;41 42 43 44]
+N=[2]
 
-refined=2;
-L=10;
-nodes=[3;6;9];
-
-fe=fe_eMatrix(L/refined)
-f=zeros(2*(refined+1)^2,1);
-
-for i=1:refined
-    f(nodes(i,1)*2-1,1)= f(nodes(i,1)*2-1,1)+fe(1);
-    f(nodes(i+1,1)*2-1,1)=  f(nodes(i+1,1)*2-1,1)+fe(2);
+for i=1:length(N)
+    j(2*i-1,1)=2*N(i)-1
+    j(2*i,1)=2*N(i)
 end
-f
+
+for k=1:length(j)
+    K(j(k)-(k-1),:)=[];
+    K(:,j(k)-(k-1))=[];
+%     F(j(k)-(k-1),:)=[];
+end
+K
